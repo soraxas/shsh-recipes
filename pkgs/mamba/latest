@@ -1,0 +1,3 @@
+#!/bin/sh
+
+shsh install "_shsh-recipes/${pkg}" --plain -h pre='curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba'
