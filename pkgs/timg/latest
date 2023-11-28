@@ -1,0 +1,3 @@
+#!/bin/sh
+
+shsh install hzeller/timg -h pre='cmake -Bbuild . && make -Cbuild' -v BINS=build/src/timg
