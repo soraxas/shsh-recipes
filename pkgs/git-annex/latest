@@ -6,7 +6,9 @@ debfile="git-annex-standalone_$VERSION-1.ndall+1_amd64.deb"
 
 URL="https://github.com/datalad/git-annex/releases/download/$VERSION/$debfile"
 
-shsh install -f "_shsh-recipes/${pkg}" --plain -h pre="wget '$URL' && ar x '$debfile' && tar xvf 'data.tar.gz'" -h post="rm -rf '$debfile' data.tar.gz control.tar.gz debian-binary" \
+shsh install -f "_shsh-recipes/${pkg}" --plain \
+  -h pre="wget '$URL' && ar x '$debfile' && tar xvf 'data.tar.gz'" \
+  -h post="rm -rf '$debfile' data.tar.gz control.tar.gz debian-binary" \
   -v FISH_COMPLETIONS=usr/share/fish/vendor_completions.d/git-annex.fish \
   -v BASH_COMPLETIONS=usr/share/bash-completion/completions/git-annex \
   -v ZSH_COMPLETIONS=usr/share/zsh/vendor-completions/_git-annex \
